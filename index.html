@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://dropi.space/font/css/all.css">
+    <title>Timer</title>
+</head>
+<body>
+    <header>
+        <nav class="header--nav">
+            <ul class="header--list">
+                <li>
+                    <button class="button header--button header--button__active" title="Chronometer" id="chronometer-button"><i class="fa-solid fa-clock active"></i></button>
+                </li>
+                <li>
+                    <button class="button header--button" title="Timer" id="timer-button"><i class="fa-solid fa-hourglass"></i></button>
+                </li>
+                <li>
+                    <button class="button header--button" title="Pomodoro" id="pomodoro-button"><i class="fa-solid fa-tomato"></i></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="main">
+            <h1 class="hero--title" id="hero--title">Chronometer</h1>
+            <div class="hero--time">
+                <div class="time--uptime"><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>.<span id="miliseconds" class="time--miliseconds">00</span></div>
+                <div class="time--string"><span id="hours">hr</span><span id="minutes">min</span><span id="seconds">sec</span><span></span></div>
+            </div>
+            <div id="set--timer"></div>
+            <div class="hero--buttons">
+                <button class="button hero--button button__green" id="start" type="button">Start</button>
+                <button class="button hero--button button__red" id="stop" type="button">Stop</button>
+                <button class="button hero--button" id="reset" type="button">Reset</button>
+            </div>
+        </section>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>

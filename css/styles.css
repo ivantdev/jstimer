@@ -1,0 +1,224 @@
+:root {
+    --bg-dark: #1d2125;
+    --text-white: rgb(226, 226, 226);
+    --bg-button-header: rgb(67, 150, 150);
+    --bg-button-header-hover: rgb(70, 119, 119);
+    --bg-button-header-act: rgb(95, 163, 190);
+    --bg-button-default: rgb(74, 71, 119);
+    --bg-button-red: rgb(163, 15, 10);
+    --bg-button-green: rgb(39, 116, 20);
+    --bg-button-disabled: rgb(122, 122, 122);
+    --bg-dark-input: #267086b7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+i {
+    pointer-events: none;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header--list {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.header--button {
+    width: 90px;
+    max-width: 200px;
+    height: 80px;
+    font-size: 4rem;
+    color: var(--text-white);
+    background-color: var(--bg-button-header);
+    border: none;
+    border-radius: 20px;
+}
+
+.header--button:hover {
+    cursor: pointer;
+    background-color: var(--bg-button-header-hover);
+}
+
+.header--button__active {
+    background-color: var(--bg-button-header-act);
+}
+
+.header--button__active:hover {
+    background-color: var(--bg-button-header-act);
+    cursor: default;
+}
+
+main {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-10%);
+}
+
+.hero {
+    width: 100%;
+    text-align: center;
+}
+
+.hero--title {
+    font-size: 3.6rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.time--uptime{
+    width: 300px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5.6rem;
+    font-weight: 100;
+}
+
+.time--miliseconds {
+    margin-bottom: 2px;
+    font-size: 2.5rem;
+    align-self: flex-end;
+}
+
+.time--string {
+    width: 240px;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 2.7rem;
+    font-weight: 100;
+}
+
+.time--string span {
+    display: inline-block;
+    width: 68px;
+    text-align: center;
+}
+
+.hero--buttons {
+    margin-top: 20px;
+}
+
+.hero--button {
+    margin: 10px;
+    width: 80px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-white);
+    background-color: var(--bg-button-default);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 15px -1px #ffffff1f;
+}
+
+.hero--button:disabled {
+    background-color: var(--bg-button-disabled);
+    cursor: default;
+}
+
+.button__green {
+    background-color: var(--bg-button-green);
+}
+
+.button__red {
+    background-color: var(--bg-button-red);
+}
+
+#set--timer {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#set--timer h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#set--timer form {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#set--timer input::placeholder {
+    text-align: center;
+    font-weight: 300;
+    color: var(--text-white);
+}
+
+/* remove arrows input number */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* remove arrows input number - end */
+
+#set--timer input {
+    width: 60px;
+    height: 30px;
+    margin: 0;
+    padding: 0 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--text-white);
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background-color: var(--bg-dark-input);
+}
+
+#set--timer .timer--end {
+    margin: 20px 0;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: yellow;
+}
