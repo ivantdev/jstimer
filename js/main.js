@@ -51,14 +51,16 @@ function activeButtonsPomodoro() {
 function iconAddHeaderBG(event) {
     let button = event.target;
     button.classList.add('header--button__active');
+    button.disabled = true;
     let icon = button.querySelector('i');
     icon.classList.add('active');
     iconAddBeat();
 }
 
-function iconRemoveHeaderBG(event) {
+function iconRemoveHeaderBG() {
     let button = document.querySelector('.header--button__active');
     button.classList.remove('header--button__active');
+    button.disabled = false;
     iconRemoveBeat();
 }
 
