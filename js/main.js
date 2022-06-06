@@ -194,10 +194,10 @@ function startTimer() {
     currentInterval = setInterval(() => {
         if(secondsValue > 0 || minutesValue > 0 || hoursValue > 0 || milisecondsValue > 0) {
             milisecondsValue -= 1;
-            if(milisecondsValue === 0 && secondsValue > 0) {
+            if(milisecondsValue === 0 && (secondsValue > 0 || minutesValue > 0 || hoursValue > 0)) {
                 milisecondsValue = 99;
                 secondsValue -= 1;
-                if((secondsValue === 0 || secondsValue < 0) && minutesValue > 0) {
+                if((secondsValue === -1 || secondsValue < 0) && minutesValue > 0) {
                     secondsValue = 59;
                     minutesValue -= 1;
                     if((minutesValue === 0 || minutesValue < 0) && hoursValue > 0) {
@@ -212,14 +212,14 @@ function startTimer() {
                 }
                 secondsSpan.textContent = formatValue(secondsValue);
             }
-            milisecondsSpan.textContent = formatValue(milisecondsValue)
+            milisecondsSpan.textContent = formatValue(milisecondsValue);
         }
         else {
             stopTime();
             let h1 = document.querySelector('.timer--end');
             h1.textContent = "Timer Finished";
         }
-        milisecondsSpan
+        milisecondsSpan.textContent = formatValue(milisecondsValue);
     }, 10);
 }
 
@@ -227,13 +227,13 @@ function resetTimer() {
     if(!(inputHours && inputMinutes && inputSeconds)) {
         return;
     }
-    milisecondsSpan.textContent = "00";
-    secondsSpan.textContent = inputSeconds.value != "" ? inputSeconds.value : "00";
-    minutesSpan.textContent = inputMinutes.value != "" ? inputMinutes.value : "00";
-    hoursSpan.textContent = inputHours.value != "" ? inputHours.value : "00";
+    milisecondsSpan.textContent = "01";
+    secondsSpan.textContent = inputSeconds.value != "" ? formatValue(inputSeconds.value) : "00";
+    minutesSpan.textContent = inputMinutes.value != "" ? formatValue(inputMinutes.value) : "00";
+    hoursSpan.textContent = inputHours.value != "" ? formatValue(inputHours.value) : "00";
     let h1 = document.querySelector('.timer--end');
     h1.textContent = "";
-    secondsValue = 0, minutesValue = 0, hoursValue = 0;
+    secondsValue = parseInt(inputSeconds.value), minutesValue = parseInt(inputMinutes.value), hoursValue = parseInt(inputHours.value , milisecondsValue = 1);
 }
 
 function startPomodoro() {
